@@ -3,7 +3,7 @@
     
     //const BASE_URL = "https://ivnamo.com/pgc/";
 
-    const BASE_URL = "http://localhost/pgc2/";
+    const BASE_URL = "http://localhost/pgc/";
 
     //Datos envio de correo
 	const NOMBRE_REMITENTE = "Patricia Galdón";
