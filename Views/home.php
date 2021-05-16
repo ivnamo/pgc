@@ -39,6 +39,7 @@
       </ul>
     </header>
     <main class="">
-vacio
+Cierra la sesión
+<?php header('location:'.base_url().'login');?>
     </main>
 <?php footerAdmin($data);?>
