@@ -1,0 +1,12 @@
+<If "%{HTTP_USER_AGENT} !~ /(iPhone; CPU iPhone OS 1[0-2]|iPad; CPU OS 1[0-2]|iPod touch; CPU iPhone OS 1[0-2]|Macintosh; Intel Mac OS X.*Version\x2F1[0-2].*Safari|Macintosh;.*Mac OS X 10_14.* AppleWebKit.*Version\x2F1[0-3].*Safari)/i">
+    Header edit Set-Cookie ^(.*)$ $1;SameSite=None;Secure
+</If>
+
+Options All -Indexes
+RewriteEngine on
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
