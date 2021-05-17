@@ -111,8 +111,10 @@
        public function getEventos()
        {
         if($_SESSION['permisosMod']['r']){
+            $fechaInicio = "";
+            $fechaFin = "";
            
-           $arrData = $this->model->selectEventos();
+           $arrData = $this->model->selectEventos($fechaInicio,$fechaFin);
           
            
            for ($i=0; $i < count($arrData) ; $i++) { 

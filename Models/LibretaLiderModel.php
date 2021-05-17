@@ -83,12 +83,20 @@
 
 
 
-        public function selectEventos()
+        public function selectEventos(string $fechaInicio,string $fechaFin)
         {
             
             $this->intIdUser = $_SESSION['idUser'];
+            $this->fechaInicio =$fechaInicio;
+            $this->fechaFin =$fechaFin;
             
             $noAdmin="";
+            $dateRange="";
+
+            if($fechaInicio !="" AND $fechaFin !="")
+            {
+                $dateRange = " AND l.fecha BETWEEN '$this->fechaInicio' AND '$this->fechaFin'";
+            }
 
 
             if($_SESSION['idUser']>2)
@@ -103,7 +111,7 @@
                     FROM libretalider l
                     INNER JOIN colaborador c ON l.colaboradorid=c.idcolaborador
                     INNER JOIN persona p ON l.personaid=p.idpersona
-                    WHERE l.status !=0".$noAdmin;
+                    WHERE l.status !=0".$noAdmin.$dateRange;
 
                     $request = $this->select_all($sql);
                     return $request;
