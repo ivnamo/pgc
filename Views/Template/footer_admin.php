@@ -1,7 +1,7 @@
    <div class="">
      <footer class="container">
          <div class="text-right p-2 col-md-12">
-           <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img class="pr-2" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">PGC</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Iván Navarro</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Reconocimiento-NoComercial 4.0 Internacional License</a>.
+           <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img class="pr-2" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">PGC v05.21</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Iván Navarro</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Reconocimiento-NoComercial 4.0 Internacional License</a>.
          </div>
      </footer>
    </div>
