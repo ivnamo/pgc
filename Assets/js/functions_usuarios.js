@@ -350,6 +350,7 @@ function fntEditUsuario(idpersona) {
                 document.querySelector("#txtEmail").value = objData.data.email;
                 document.querySelector("#txtNombre").value = objData.data.nombre;
                 document.querySelector("#txtApellido").value = objData.data.apellidos;
+                document.querySelector("#txtEmpresa").value = objData.data.empresa;
                 document.querySelector("#listRolid").value = objData.data.idrol;
                 document.querySelector("#listStatus").value = objData.data.status;
                 $("#listRolid").selectpicker("render");
