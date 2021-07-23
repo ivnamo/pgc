@@ -26,6 +26,26 @@
             
         }
 
+        public function getSelectCols()
+        {
+            $hmtlOptions="";
+            $arrData = $this->model->selectCols();
+            if(count($arrData)>0)
+            {
+                for ($i=0; $i <count($arrData) ; $i++) 
+                {
+                    if($arrData[$i]['status']== 1)
+                    {
+                    $hmtlOptions .= '<option value="'.$arrData[$i]['idpersona'].'">'.$arrData[$i]['nombre']." ".$arrData[$i]['apellidos'].'</option>';
+                    } 
+                }
+            }else{
+                $hmtlOptions = '<option value=0 selected disabled>No hay líderes creados</option>';
+            }
+            echo $hmtlOptions;
+            die();
+        }
+
 
         public function setFile()
         {

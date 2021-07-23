@@ -14,8 +14,13 @@ headerAdmin($data);
   <div class="app-title">
     <div>
       <h1><i class="far fa-clipboard"></i> <?php echo  $data['page_title'] ?>
+       
+
         <?php if ($_SESSION['permisosMod']['w']) { ?>
+
           <button class="btn btn-primary subirdoc" title="Sube o actualiza un documento" type="button"><i class="fa fa-retweet"></i>Upload/Update</button>
+          <select class="form-control show-tick" data-live-search="true" id="listDesarrolloid" name="listDesarrolloid" required=""></select>
+
 
 
           <div class="dropzone-previews div-table"></div>
@@ -51,7 +56,7 @@ headerAdmin($data);
             <table class="table table-hover table-bordered" id="tableDesarrollo">
               <thead>
                 <tr>
-                  
+
                   <th>Id</th>
                   <th>Líder</th>
                   <th>Empresa</th>
@@ -65,7 +70,7 @@ headerAdmin($data);
               </thead>
               <tbody>
                 <tr>
-                  
+
                   <td>CARGANDO...</td>
                   <td>CARGANDO...</td>
                   <td>CARGANDO...</td>

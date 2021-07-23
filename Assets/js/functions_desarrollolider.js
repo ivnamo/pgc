@@ -110,6 +110,7 @@ window.addEventListener("load", function() {
     setTimeout(() => {
 
         fntAlertCopy();
+        fntColUsuario();
 
     }, 500);
 }, false);
@@ -127,6 +128,25 @@ function fntAlertCopy() {
         });
 
     });
+}
+
+function fntColUsuario() {
+    if (document.querySelector("#listDesarrolloid")) {
+        let ajaxUrl = base_url + 'DesarrolloLider/getSelectCols/';
+        let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        request.open("GET", ajaxUrl, true);
+        request.send();
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == 200) {
+                document.querySelector("#listDesarrolloid").innerHTML = request.responseText;
+                //document.querySelector("#listRolid").value = 1;
+                $('#listDesarrolloid').selectpicker('refresh');
+
+            }
+        }
+
+    }
+
 }
 
 //borrar evento

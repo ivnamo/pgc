@@ -7,6 +7,22 @@
         {
             parent::__construct();
         }
+        
+        public function selectCols()
+        {
+            $noAdmin="";
+            $this->intIdUser = $_SESSION['idUser'];
+
+            if($_SESSION['idUser']>2)
+            {
+
+                $noAdmin=" AND personaid = $this->intIdUser";
+            }
+         
+            $sql = "SELECT * FROM persona WHERE status !=0".$noAdmin;
+            $request = $this->select_all($sql);
+            return $request;
+        }
 
         public function insertFile(int $idUsuario, string $filename)
         {
