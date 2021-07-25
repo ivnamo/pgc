@@ -16,7 +16,7 @@
             if($_SESSION['idUser']>2)
             {
 
-                $noAdmin=" AND personaid = $this->intIdUser";
+                $noAdmin=" AND idpersona = $this->intIdUser";
             }
          
             $sql = "SELECT * FROM persona WHERE status !=0".$noAdmin;
@@ -28,9 +28,22 @@
         {
             $this->intIdUsuario = $idUsuario;
             $this->strFile = $filename;
-            $this->strEmpresa = $_SESSION['userData']['empresa'];
+
+            if($idUsuario!=$_SESSION['idUser']){
+
+                $sql = "SELECT * 
+                    FROM persona    
+                    WHERE idpersona = $idUsuario AND status!=0";
+
+                $request = $this->select($sql);
+                $this->strEmpresa = $request['empresa'];
+
+            }else{
+                $this->strEmpresa = $_SESSION['userData']['empresa'];
+            }
 
 
+            
             $sql = "SELECT * 
                     FROM desarrollolider    
                     WHERE (filename = '{$this->strFile}' AND personaid = '{$this->intIdUsuario}' AND status!=0)";
@@ -134,6 +147,3 @@
 
 
     }//fin class
-
-
-?>

@@ -20,6 +20,7 @@ headerAdmin($data);
 
           <button class="btn btn-primary subirdoc" title="Sube o actualiza un documento" type="button"><i class="fa fa-retweet"></i>Upload/Update</button>
           <select class="form-control show-tick" data-live-search="true" id="listDesarrolloid" name="listDesarrolloid" required=""></select>
+          <input type="hidden" id="idUser" name="idUser" value= <?php echo $_SESSION["idUser"];?>>
 
 
 

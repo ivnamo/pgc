@@ -53,9 +53,17 @@
             if($_SESSION)
             {
                 if (!empty($_FILES)) 
-                {
 
-                    $idUsuario = intval($_SESSION['idUser']);
+                {
+                    if($_SESSION['idUser']<3){
+                        $idUsuario = intval($_POST["lider"]);
+
+                    }else{
+                        $idUsuario = intval($_SESSION['idUser']);
+                    }
+
+
+                    
                     $imagePath = isset($_FILES["file"]["name"]) ? $_FILES["file"]["name"] : "Undefined";
                     $filename=$_FILES["file"]["name"];
                     $micarpeta = 'Assets/files/id'.$idUsuario.'/';

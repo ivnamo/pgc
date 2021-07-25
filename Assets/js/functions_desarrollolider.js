@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     previewNode.parentNode.removeChild(previewNode);
 
 
+
     //TABLA COLAB 
     tableDesarrollo = $('#tableDesarrollo').DataTable({
         "aProcessing": true,
@@ -62,13 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     });
 
+    document.querySelector("#listDesarrolloid").addEventListener("change", function() {
+        let lider = document.querySelector("#listDesarrolloid option:checked").value;
+        console.log(lider);
+
+    });
+
 
     //DROPZONE UPLOAD
 
     Dropzone.autoDiscover = false;
 
     $(".subirdoc").dropzone({
-        url: base_url + 'DesarrolloLider/setFile/',
+        url: base_url + 'DesarrolloLider/setFile',
         createImageThumbnails: false,
         maxFileSize: 10,
         acceptedFiles: ".xlsx, .xls, .csv",
@@ -76,8 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
         previewTemplate: previewTemplate,
 
         init: function() {
+
+            this.on("sending", function(file, xhr, data) {
+                let lider = document.querySelector("#listDesarrolloid option:checked").value;
+                data.append("lider", lider);
+            });
+
+
             this.on("success", function(file, xhr) {
                 setTimeout(() => {
+
 
                     let objData = JSON.parse(xhr);
                     swal(objData.tipo, objData.msg, "success");
@@ -139,7 +154,8 @@ function fntColUsuario() {
         request.onreadystatechange = function() {
             if (request.readyState == 4 && request.status == 200) {
                 document.querySelector("#listDesarrolloid").innerHTML = request.responseText;
-                //document.querySelector("#listRolid").value = 1;
+                let idUser = document.querySelector("#idUser").value;
+                document.querySelector("#listDesarrolloid").value = idUser;
                 $('#listDesarrolloid').selectpicker('refresh');
 
             }
@@ -188,6 +204,8 @@ function fntDelDoc(iddesarrollolider) {
     });
 
 }
+
+
 
 
 
